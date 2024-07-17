@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1190px;
+            min-height: 400px;
+            margin: auto;
+            border: solid red 1px;
+        }
+
+        .tab-parent {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .tab-parent li {
+            padding: 20px;
+            /* background-color: blue; */
+        }
+
+        .mainbox {
+            border: solid black 2px;
+            padding: 10px;
+            display: none;
+            transform: translateX(0);
+            transition: 2s;
+        }
+
+        .active {
+            background-color: black !important;
+            color: white !important;
+            border-radius: 5px;
+        }
+
+        .open {
+            display: block !important;
+            transform: translateX(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="tab-parent">
+            <li data-user="0" class="active">home</li>
+            <li data-user="1">about</li>
+            <li data-user="2">contact</li>
+            <li data-user="3">course</li>
+            <li data-user="4">gallery</li>
+        </ul>
+        <div class="parent">
+            <div class="mainbox open">
+                <h2>home</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aperiam omnis eius amet impedit et
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                totam.
+            </div>
+            <div class="mainbox">
+                <h2>about</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aperiam omnis eius amet impedit et
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                totam.
+            </div>
+            <div class="mainbox">
+                <h2>contact</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aperiam omnis eius amet impedit et
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                totam.
+            </div>
+            <div class="mainbox">
+                <h2>course</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aperiam omnis eius amet impedit et
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                totam.
+            </div>
+            <div class="mainbox">
+                <h2>gallery</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aperiam omnis eius amet impedit et
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                iste voluptates animi. Deserunt quo iure aspernatur nemo placeat ipsam atque iste, earum laboriosam
+                totam.
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var allli = document.querySelectorAll('.tab-parent li')
+    console.log(allli)
+
+    var mainbox = document.querySelectorAll('.mainbox')
+    console.log(mainbox)
+
+    for(items of allli){
+        // console.log(items)
+        items.addEventListener(
+            'click',
+           function(event){
+                console.log(event)
+
+                var firstcurrentactive = document.querySelector('.active')
+                firstcurrentactive.classList.remove('active')
+
+                console.log(event.target.dataset.user)
+
+                currentmainboxopen = document.querySelector('.open')
+                currentmainboxopen.classList.remove('open')
+
+                mainbox[event.target.dataset.user].classList.add('open')
+                //mainbox[0]
+                //mainbox[1]
+                //mainbox[2]
+                //mainbox[3]
+
+
+               var currentactive = event.target.classList.add('active')
+           }
+        )
+    }
+</script>
+
+</html>
+
